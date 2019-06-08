@@ -1,0 +1,9 @@
+dependencies {
+	compileOnly project(path: ':test:test-data', configuration: 'default')
+    compileOnly rootProject
+	annotationProcessor rootProject
+}
+
+tasks.withType(JavaCompile) {
+    outputs.upToDateWhen { false }
+}

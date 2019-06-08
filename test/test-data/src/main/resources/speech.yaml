@@ -1,0 +1,31 @@
+error: Error
+welcome: Hello {name}
+trippleWelcome: Hello {n}{n}{n}
+threeWelcome: Hello {n1}{n2}{n3}
+helloError: Hello [error]
+hellolistA: Hello [listA]
+weightedList:
+  - value: W0
+    weight: 0
+  - value: W2
+    weight: 2
+  - value: W3
+    weight: 10
+  - W1
+listA: &listA
+  - A1
+  - A2
+  - A3
+listB: &listB
+  - B1
+  - value: B2
+    weight: 0
+  - value: B3
+    weight: 1
+listABandC:
+   - "[listA]"
+   - value: "[listB]"
+     weight: 5
+   - C1
+   - value: C2
+     weight: 2
