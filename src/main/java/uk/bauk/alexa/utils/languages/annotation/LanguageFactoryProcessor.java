@@ -42,6 +42,7 @@ import com.squareup.javapoet.TypeName;
 import com.squareup.javapoet.TypeSpec;
 
 import uk.bauk.alexa.utils.languages.annotation.generators.LocaleClassGenerator;
+import uk.bauk.alexa.utils.languages.annotation.generators.AbstractBaseGenerator;
 import uk.bauk.alexa.utils.languages.annotation.generators.FactoryGenerator;
 import uk.bauk.alexa.utils.languages.annotation.generators.InterfaceGenerator;
 import uk.bauk.alexa.utils.languages.annotation.generators.MethodGenerator;
@@ -100,6 +101,7 @@ public class LanguageFactoryProcessor extends AbstractProcessor {
 	
 	private void generateLanguageSet(ResourceParser resourceParser) throws IOException, GeneratorException {
 		Set<String> languageKeys = null;
+		new AbstractBaseGenerator(resourceParser).writeToFile(filer);
 		for(Locale locale: resourceParser.locales) {
 			Map<String, MethodGenerator> items = resourceParser.getLocaleMap(locale);
 			if(languageKeys == null) {

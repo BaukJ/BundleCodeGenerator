@@ -33,7 +33,7 @@ public @interface LanguageFactory {
 	 * Base class all language classes extend.
 	 * Useful for overwriting common methods such as rand.
 	 */
-	Class<? extends LanguageBase> languageBase() default LanguageBase.class;
+//	Class<? extends LanguageBase> languageBase() default null;
 	/*
 	 * Prefix given to text retrieval methods (defaults to get, so sets welcome method to getWelcome())
 	 */

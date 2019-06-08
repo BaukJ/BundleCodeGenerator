@@ -82,6 +82,12 @@ public class ResourceParser {
 	public ClassName factoryClassName() {
 		return ClassName.get(packageName, factoryName());
 	}
+	public String baseName() {
+		return capitalisedPrefix()+"Base";
+	}
+	public ClassName baseClassName() {
+		return ClassName.get(packageName, baseName());
+	}
 	public String localeName(Locale locale) {
 		return capitalisedPrefix()+"_"+locale.toString();
 	}

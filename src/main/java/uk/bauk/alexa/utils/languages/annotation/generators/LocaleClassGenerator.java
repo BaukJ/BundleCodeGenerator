@@ -4,11 +4,6 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import javax.lang.model.element.Modifier;
-
-import com.squareup.javapoet.TypeSpec;
-
-import uk.bauk.alexa.utils.languages.annotation.LanguageBase;
 import uk.bauk.alexa.utils.languages.annotation.ResourceParser;
 
 public class LocaleClassGenerator extends BaseClassGenerator {
@@ -23,7 +18,7 @@ public class LocaleClassGenerator extends BaseClassGenerator {
 	protected void addClassModifiers() {
 		super.addClassModifiers();
 		classBuilder.addSuperinterface(resourceParser.interfaceClassName())
-			.superclass(LanguageBase.class);
+			.superclass(resourceParser.baseClassName());
 	}
 	@Override
 	protected void addMethods() {
