@@ -2,6 +2,7 @@ package uk.bauk.alexa.utils.languages.annotation.generators;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -19,7 +20,7 @@ import uk.bauk.alexa.utils.languages.annotation.ResourceParser;
 public class MethodGenerator implements ParserUtils {
 	public final String key;
 	private final ResourceParser resourceParser;
-	private final Map<String, Class<?>> parameters = new HashMap<String, Class<?>>();
+	private final Map<String, Class<?>> parameters = new LinkedHashMap<String, Class<?>>();
 	private final List<MessageOption> messages = new ArrayList<MessageOption>();
 	
 	private static final String KEY_VALUES = "values";

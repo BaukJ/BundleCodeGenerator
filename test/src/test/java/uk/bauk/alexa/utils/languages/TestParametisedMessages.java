@@ -35,4 +35,11 @@ public class TestParametisedMessages implements LocaleObjects {
 	public void specialCharsFailGeneration2() {
 		assertEquals("Hello NAME$1", GB().getWelcome("NAME$1"));
 	}
+
+	@Test
+	public void testParametersOrdering() {
+		assertEquals("Hello 1 222,1![]", GB().getThreeWelcome("1 ", "222,", "1![]"));
+		assertEquals("Hello 1 222,1![]", GB().getThreeWelcomeMap("1 ", "222,", "1![]"));
+		assertEquals("Hello 54123", GB().getHelloRandomOrder54123("1", "4", "2", "5", "3"));
+	}
 }

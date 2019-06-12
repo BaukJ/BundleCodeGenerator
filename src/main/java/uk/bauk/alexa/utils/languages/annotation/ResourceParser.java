@@ -37,6 +37,7 @@ public class ResourceParser {
 	// TODO: Allow private items, only visible to self to stop clouding the class
 	// TODO: Allow sub-classes to help split up messages (e.g. launch.getMessage() / [launch.message]) could do variables/funcs with anonymous classes (needs to conform to interface)
 	// TODO: Allow all the parameters to be optionally defined in the base class to stop repeating them everywhere(Or better yet, force a base class as that will be where the interface is based off)
+	// TODO: Allow parameters to have resolves to Strings (e.g. can pass in ItemsType, and it have it used as itemsType.getName(). Would need to do something about imports though)
 	private final LanguageFactory annotation;
 	public final String packageName;
 	public final String prefix;

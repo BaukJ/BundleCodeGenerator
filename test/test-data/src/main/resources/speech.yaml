@@ -2,6 +2,23 @@ error: Error
 welcome: Hello {name}
 trippleWelcome: Hello {n}{n}{n}
 threeWelcome: Hello {n1}{n2}{n3}
+threeWelcomeMap:
+  parameters:
+    - n1
+    - n2
+    - n3
+  values:
+    - Hello {n1}{n2}{n3}
+    - value: Hello {n1}{n2}{n3}
+      weight: 100
+helloRandomOrder54123:
+  parameters:
+    - n1
+    - n4
+    - n2
+    - n5
+    - n3
+  values: Hello {n5}{n4}{n1}{n2}{n3}
 helloError: Hello [error]
 hellolistA: Hello [listA]
 weightedList:
