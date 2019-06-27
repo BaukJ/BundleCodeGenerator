@@ -3,46 +3,68 @@ welcome: Hello {name}
 trippleWelcome: Hello {n}{n}{n}
 threeWelcome: Hello {n1}{n2}{n3}
 threeWelcomeMap:
-  parameters:
-    - n1
-    - n2
-    - n3
-  values:
-    - Hello {n1}{n2}{n3}
-    - value: Hello {n1}{n2}{n3}
+   parameters:
+   - n1
+   - n2
+   - n3
+   values:
+   - Hello {n1}{n2}{n3}
+   -  value: Hello {n1}{n2}{n3}
       weight: 100
 helloRandomOrder54123:
-  parameters:
-    - n1
-    - n4
-    - n2
-    - n5
-    - n3
-  values: Hello {n5}{n4}{n1}{n2}{n3}
+   parameters:
+   - n1
+   - n4
+   - n2
+   - n5
+   - n3
+   values: Hello {n5}{n4}{n1}{n2}{n3}
 helloError: Hello [error]
 hellolistA: Hello [listA]
 weightedList:
-  - value: W0
-    weight: 0
-  - value: W2
-    weight: 2
-  - value: W3
-    weight: 10
-  - W1
-listA: &listA
-  - A1
-  - A2
-  - A3
-listB: &listB
-  - B1
-  - value: B2
-    weight: 0
-  - value: B3
-    weight: 1
+-  value: W0
+   weight: 0
+-  value: W2
+   weight: 2
+-  value: W3
+   weight: 10
+- W1
+listA:
+- A1
+- A2
+- A3
+listB:
+- B1
+-  value: B2
+   weight: 0
+-  value: B3
+   weight: 1
 listABandC:
-   - "[listA]"
-   - value: "[listB]"
-     weight: 5
-   - C1
-   - value: C2
-     weight: 2
+- '[listA]'
+-  value: '[listB]'
+   weight: 5
+- C1
+-  value: C2
+   weight: 2
+pFuncPartA:
+   parameters:
+   - p1
+   - p2
+   values:
+   - "{p1}-{p2}"
+   - "{p2}-{p1}"
+pFuncPartB:
+   parameters:
+   - param
+   values:
+   - "B1-{param}"
+   - "B2-{param}"
+pFunc:
+   parameters:
+   - param1
+   - param2
+   values:
+   - "[pFuncPartA(param1, param2)]_[pFuncPartB(param1)]"
+   - "[pFuncPartA(param1,param2)]_[pFuncPartB(param1)]"
+   - "[pFuncPartA(param1,     param2)]_[pFuncPartB(param1)]"
+pFuncEmpty: "[listB()]"

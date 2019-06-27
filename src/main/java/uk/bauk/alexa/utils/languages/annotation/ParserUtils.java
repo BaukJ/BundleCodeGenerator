@@ -17,7 +17,7 @@ import uk.bauk.alexa.utils.languages.annotation.messageparts.StringPart;
 
 public interface ParserUtils {
 	Pattern basicVartiablePattern = Pattern.compile("^\\{(\\w*)\\}.*");
-	Pattern basicFunctionPattern = Pattern.compile("^\\[(\\w*)\\].*");
+	Pattern basicFunctionPattern = Pattern.compile("^\\[(\\w*(\\((\\w*, *)*\\w*\\))?)\\].*");
 	Pattern simpleStringPattern   = Pattern.compile("^([^\\{\\}\\[\\]]*).*");
 //	default Map<String, Class<?>> parseText(String text) throws GeneratorException {
 //		Map<String, Class<?>> ret = new HashMap<String, Class<?>>();
